@@ -15,11 +15,15 @@ Python versión 3.9+
 Otras librerías: 
 
 sudo apt-get install libpq-dev python-dev-is-python3
+
 sudo apt install python3-pip
-udo apt install python3-flask
+
+sudo apt install python3-flask
 
 pip3 install psycopg2
+
 pip install flask-marshmallow
+
 pip install flask flask-jsonpify flask-sqlalchemy flask-restful
 
 ###########################################
