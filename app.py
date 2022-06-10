@@ -6,9 +6,9 @@ import service.bill_service as bill_service, service.user_service as user_servic
 app = Flask(__name__)
 
 """
-- Método que devuelve un bill dado su identificador
+- Metodo que devuelve un bill dado su identificador
 - Params: id: identificador del bill
-- Return objeto json asociado al id, vacío en caso de no encontrar coicidencias
+- Return objeto json asociado al id, vacio en caso de no encontrar coicidencias
 """
 @app.route('/bill/<id>')
 def get(id):
@@ -16,9 +16,9 @@ def get(id):
     return bill_schema.dump(bill)
 
 """
-- Método que elimina un bill dado su identificador
+- Metodo que elimina un bill dado su identificador
 - Params: id: identificador del bill a ser eliminado
-- Return objeto json asociado al registro eliminado, vacío en caso de no encontrar coicidencias
+- Return objeto json asociado al registro eliminado, vacio en caso de no encontrar coicidencias
 """
 @app.route('/bill/<id>', methods=['DELETE'])
 def delete(id):
@@ -26,8 +26,8 @@ def delete(id):
     return bill_schema.dump(bill)
 
 """
-- Método que devuelve todos los bills registrados en la BD
-- Return Lista de objetos json, vacío en caso de no encontrar registros
+- Metodo que devuelve todos los bills registrados en la BD
+- Return Lista de objetos json, vacio en caso de no encontrar registros
 """
 @app.route('/bills')
 def list():
@@ -35,9 +35,9 @@ def list():
     return jsonify(bills_schema.dump(bills))
 
 """
-- Método que registra un nuevo bill
-- Params: datos de creación del bill: user_id, value, type, observation
-- Return objeto json del registro creado, vacío en caso de error
+- Metodo que registra un nuevo bill
+- Params: datos de creacion del bill: user_id, value, type, observation
+- Return objeto json del registro creado, vacio en caso de error
 """
 @app.route('/bill', methods=['POST'])
 def save():
@@ -52,9 +52,9 @@ def save():
     return bill_schema.dump(bill)
 
 """
-- Método que permite validar las credenciales de autenticación de usuario contra la tabla users
-- Params: datos de autenticación, usuario tipo string y password tipo string
-- Return objeto json del usuario si las credenciales son válidas, vacío en caso contrario 
+- Metodo que permite validar las credenciales de autenticacion de usuario contra la tabla users
+- Params: datos de autenticacion, usuario tipo string y password tipo string
+- Return objeto json del usuario si las credenciales son validas, vacio en caso contrario 
 """
 @app.route('/login', methods=['POST'])
 def login():
