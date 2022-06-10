@@ -11,11 +11,6 @@ base = declarative_base()
 Session = sessionmaker(db)  
 session = Session()
 
-#base.metadata.create_all(db)
-
-def login(self, username, password):
-    return session.query(self).filter_by(username = username, password = password).first()
-
 # Save registre
 def save(self):
     session.add(self)  
@@ -27,10 +22,17 @@ def get(self, id):
     return session.query(self).filter_by(id = id).first()
 
 # Get all
-def list(self):
-    return session.query(self).all()
+def list(self, userId):
+    #return session.query(self).all()
+    return session.query(self).filter_by(user_id = userId).all()
 
 # Delete
 def delete(self):
     session.delete(self)  
     session.commit()
+
+def login(self, username, password):
+    return session.query(self).filter_by(username = username, password = password).first()
+
+def getUserByUsername(self, username):
+    return session.query(self).filter_by(username = username).first()

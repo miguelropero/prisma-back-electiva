@@ -1,7 +1,8 @@
 
 from service.dao.bill_dao import Bill
+from service.dao.user_dao import User
 
-import this
+import service.user_service as user_service
 import db.db as db
 import datetime
 
@@ -16,9 +17,11 @@ def save(user_id, value, type, observation):
         print("Ocurrió un error al consultar: ", e)
 
 
-def list():
+def list(username):
     try:
-        list = db.list(Bill)
+        user = user_service.getByUsername(username)
+        print(user.id)
+        list = db.list(Bill, user.id)
         return list
     except Exception as e:
         print("Ocurrió un error al consultar: ", e)

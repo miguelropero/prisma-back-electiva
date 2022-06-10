@@ -8,3 +8,10 @@ def login(username, password):
         return user
     except Exception as e:
         print("Ocurrió un error al consultar: ", e)
+
+def getByUsername(username):
+    try:
+        user = db.getUserByUsername(User, username)
+        return user
+    except Exception as e:
+        print("Ocurrió un error al consultar: ", e)

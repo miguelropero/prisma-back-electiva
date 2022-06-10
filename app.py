@@ -29,9 +29,9 @@ def delete(id):
 - Metodo que devuelve todos los bills registrados en la BD
 - Return Lista de objetos json, vacio en caso de no encontrar registros
 """
-@app.route('/bills')
-def list():
-    bills = bill_service.list()
+@app.route('/bills/<username>')
+def list(username):
+    bills = bill_service.list(username)
     return jsonify(bills_schema.dump(bills))
 
 """
