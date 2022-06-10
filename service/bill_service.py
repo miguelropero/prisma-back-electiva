@@ -20,9 +20,11 @@ def save(user_id, value, type, observation):
 def list(username):
     try:
         user = user_service.getByUsername(username)
-        print(user.id)
-        list = db.list(Bill, user.id)
-        return list
+
+        if(user):
+            list = db.list(Bill, user.id)
+            return list
+        return None
     except Exception as e:
         print("Ocurrió un error al consultar: ", e)
 
