@@ -1,0 +1,9 @@
+import os
+
+from flask import Flask, jsonify, request
+#import controller.bill_controller
+#settings_module = os.environ.get('APP_SETTINGS_MODULE', 'config.testing')
+#application = create_app(settings_module)
+
+
+app = Flask(__name__)
