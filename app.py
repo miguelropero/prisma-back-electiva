@@ -69,6 +69,7 @@ def login():
 
     return user_schema.dump(user)
 
+"""Documentando el metodo"""
 @app.route('/login2', methods=['POST'])
 def login2():
 
@@ -81,6 +82,7 @@ def login2():
         user.password = "*****"
 
     return user_schema.dump(user)
+
 
 
 if __name__ == "__main__":
