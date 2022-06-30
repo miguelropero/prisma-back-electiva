@@ -69,7 +69,7 @@ def login():
 
     return user_schema.dump(user)
 
-"""Documentando el metodo"""
+""""""
 @app.route('/login2', methods=['POST'])
 def login2():
 
