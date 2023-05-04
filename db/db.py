@@ -3,7 +3,8 @@ from sqlalchemy import Column, Integer, Numeric, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base  
 from sqlalchemy.orm import sessionmaker
 
-db_string = "postgresql://postgres:Prisma2022@prismatest.cr5kiddvokid.us-east-2.rds.amazonaws.com:5432/test"
+#db_string = "postgresql://postgres:Prisma2022@prismatest.cr5kiddvokid.us-east-2.rds.amazonaws.com:5432/test"
+db_string = "postgresql://unisimon_user:11k1WiZg5ekiFQYHx9Bog6W7cTArSZea@dpg-cfpuu1qrrk0fd9ounopg-a.oregon-postgres.render.com/unisimon"
 
 db = create_engine(db_string)  
 base = declarative_base()
