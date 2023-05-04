@@ -2,8 +2,14 @@ from flask import Flask, jsonify, request
 from service.dao.bill_dao import bill_schema, bills_schema
 from service.dao.user_dao import user_schema
 import service.bill_service as bill_service, service.user_service as user_service
+from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
+CORS(app)
+
+@app.route('/')
+def main():
+    return "Servicio OK"
 
 """
 - Metodo que devuelve un bill dado su identificador
