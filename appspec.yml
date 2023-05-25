@@ -6,5 +6,5 @@ files:
     overwrite: true
 hooks:
   ApplicationStart:
-    - location: scripts/flask.sh
+    - location: script/flask.sh
       timeout: 3600
